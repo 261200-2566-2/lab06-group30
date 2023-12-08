@@ -1,17 +1,33 @@
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
 public class Main {
     public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Characters A = new Warrior("A");
+        //Characters B = new Mage("B");
+        Accessories ring = new Ring("All 10 Ring", new int[] {10, 10, 10, 10, 10, 10, 10, 10}); //int[] {lv, hp, mp, atk, mAtk, def, mDef, spd};
+        Accessories necklace = new Necklace("Power Necklace", new int[] {15, 40, 0, 20, 0, 5, 0, 0});
 
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
+        // A.attack(B); //21 - 5 = 16
+        // B.displayInfo(); //hp 85 => 69
 
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        // A.useSkill(B, 1); //heal 25 hp
+        // A.displayInfo(); //mp 50 => 30
+        // B.displayInfo(); //hp 69 => 85(max)
+
+        A.displayInfo();
+        ring.displayInfo();
+        necklace.displayInfo();
+
+        A.equip(ring);
+        A.displayInfo();
+
+        A.equip(necklace);
+        A.displayInfo();
+
+        necklace.upgrade();
+        necklace.displayInfo();
+        A.displayInfo();
+
+        A.unEquip(1);
+        A.unEquip(2);
+        A.displayInfo();
     }
 }
